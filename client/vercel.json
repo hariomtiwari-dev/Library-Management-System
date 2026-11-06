@@ -1,0 +1,9 @@
+
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://library-management-system-vwir.vercel.app/api/$1"
+    }
+  ]
+}
