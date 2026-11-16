@@ -51,7 +51,6 @@
 
 
 
-
 import express from "express";
 import { config } from "dotenv";
 import cookieParser from "cookie-parser";
@@ -65,8 +64,15 @@ import borrowRouter from "./routes/borrowRouter.js";
 import userRouter from "./routes/userRouter.js";
 
 import expressFileUpload from "express-fileupload";
+import { v2 as cloudinary } from "cloudinary";
 
 config({ path: "./config/config.env" });
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLIENT_NAME,
+  api_key: process.env.CLOUDINARY_CLIENT_API,
+  api_secret: process.env.CLOUDINARY_CLIENT_SECRET,
+});
 
 export const app = express();
 
